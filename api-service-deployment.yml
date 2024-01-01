@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+  namespace: prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - name: api
+        image: redahimmi/medical-chatbot-api-service:dd414f79043306fa300265b2f08d7bf1d783b0a4
+        env:
+          - name: "chat-service"
+            value: "chat-service.prod"
+          - name: "REDIS_HOST"
+            value: "redis-10135.c55.eu-central-1-1.ec2.cloud.redislabs.com"
+          - name: "REDIS_PORT"
+            value: "10135"
+          - name: "REDIS_USERNAME"
+            valueFrom:
+              secretKeyRef:
+                name: db-credentials
+                key: username
+          - name: "REDIS_PASSWORD"
+            valueFrom:
+              secretKeyRef:
+                name: db-credentials
+                key: password
+        resources:
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8001

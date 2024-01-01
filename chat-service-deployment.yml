@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chat
+  namespace: prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: chat
+  template:
+    metadata:
+      labels:
+        app: chat
+    spec:
+      containers:
+      - name: chat
+        image: redahimmi/medical-chatbot-chat-service:dd414f79043306fa300265b2f08d7bf1d783b0a4
+        env:
+          - name: "PINECONE_API_KEY"
+            valueFrom:
+              secretKeyRef:
+                name: db-credentials
+                key: PINECONE_API_KEY
+          - name: "PINECONE_ENV"
+            valueFrom:
+              secretKeyRef:
+                name: db-credentials
+                key: PINECONE_ENV
+        resources:
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8000
