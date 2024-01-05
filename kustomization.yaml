@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: make
+namespace: prod
 resources:
 - api-service-deployment.yml
 - api-service-service.yml
