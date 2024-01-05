@@ -14,3 +14,13 @@ resources:
 - namespace.yml
 - production-issuer.yml
 - staging-issuer.yml
+images:
+- name: redahimmi/medical-chatbot-api-service
+  newName: redahimmi/medical-chatbot-api-service
+  newTag: a01618c096f03d486b7021c2ec160216cfe4cfd9
+- name: redahimmi/medical-chatbot-chat-service
+  newName: redahimmi/medical-chatbot-chat-service
+  newTag: a01618c096f03d486b7021c2ec160216cfe4cfd9
+- name: redahimmi/medical-chatbot-frontend
+  newName: redahimmi/medical-chatbot-frontend
+  newTag: a01618c096f03d486b7021c2ec160216cfe4cfd9
