@@ -17,7 +17,7 @@ spec:
         image: redahimmi/medical-chatbot-frontend:dd414f79043306fa300265b2f08d7bf1d783b0a4
         resources:
           limits:
-            memory: "1Gi"
+            memory: "500Mi"
             cpu: "100m"
         ports:
         - containerPort: 80

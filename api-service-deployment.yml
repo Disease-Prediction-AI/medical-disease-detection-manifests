@@ -35,7 +35,7 @@ spec:
                 key: password
         resources:
           limits:
-            memory: "1Gi"
+            memory: "500Mi"
             cpu: "100m"
         imagePullPolicy: Always
         ports:
