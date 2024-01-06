@@ -17,10 +17,10 @@ resources:
 images:
 - name: redahimmi/medical-chatbot-api-service
   newName: redahimmi/medical-chatbot-api-service
-  newTag: af0f000a7ca799c51e4dbc891f415e2e067ce85a
+  newTag: bcb27f22241d280a59be18da277b5fabd2462339
 - name: redahimmi/medical-chatbot-chat-service
   newName: redahimmi/medical-chatbot-chat-service
-  newTag: af0f000a7ca799c51e4dbc891f415e2e067ce85a
+  newTag: bcb27f22241d280a59be18da277b5fabd2462339
 - name: redahimmi/medical-chatbot-frontend
   newName: redahimmi/medical-chatbot-frontend
-  newTag: af0f000a7ca799c51e4dbc891f415e2e067ce85a
+  newTag: bcb27f22241d280a59be18da277b5fabd2462339
