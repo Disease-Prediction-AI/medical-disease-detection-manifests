@@ -3,24 +3,24 @@ kind: Kustomization
 
 namespace: prod
 resources:
-- api-service-deployment.yml
-- api-service-service.yml
-- chat-service-deployment.yml
-- chat-service-service.yml
-- databaseSecret.yml
-- frontend-deployment.yml
-- frontend-service.yml
-- ingress.yml
-- namespace.yml
-- production-issuer.yml
-- staging-issuer.yml
+  - api-service-deployment.yml
+  - api-service-service.yml
+  - chat-service-deployment.yml
+  - chat-service-service.yml
+  - databaseSecret.yml
+  - frontend-deployment.yml
+  - frontend-service.yml
+  - ingress.yml
+  - namespace.yml
+  - production-issuer.yml
+  - staging-issuer.yml
 images:
-- name: redahimmi/medical-chatbot-api-service
-  newName: redahimmi/medical-chatbot-api-service
-  newTag: a01618c096f03d486b7021c2ec160216cfe4cfd9
-- name: redahimmi/medical-chatbot-chat-service
-  newName: redahimmi/medical-chatbot-chat-service
-  newTag: a01618c096f03d486b7021c2ec160216cfe4cfd9
-- name: redahimmi/medical-chatbot-frontend
-  newName: redahimmi/medical-chatbot-frontend
-  newTag: a01618c096f03d486b7021c2ec160216cfe4cfd9
+  - name: redahimmi/medical-chatbot-api-service
+    newName: redahimmi/medical-chatbot-api-service
+    newTag: a01618c096f03d486b7021c2ec160216cfe4cfd9
+  - name: redahimmi/medical-chatbot-chat-service
+    newName: redahimmi/medical-chatbot-chat-service
+    newTag: a01618c096f03d486b7021c2ec160216cfe4cfd9
+  - name: redahimmi/medical-chatbot-frontend
+    newName: redahimmi/medical-chatbot-frontend
+    newTag: a01618c096f03d486b7021c2ec160216cfe4cfd9

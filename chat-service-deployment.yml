@@ -27,6 +27,11 @@ spec:
               secretKeyRef:
                 name: db-credentials
                 key: PINECONE_ENV
+          - name: "HUGGINGFACEHUB_API_TOKEN"
+            valueFrom:
+              secretKeyRef:
+                name: db-credentials
+                key: HUGGINGFACEHUB_API_TOKEN
         resources:
           limits:
             memory: "500Mi"
