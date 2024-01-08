@@ -2,20 +2,23 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 namespace: prod
+# - frontend-deployment.yml
+# - frontend-service.yml
 resources:
 - api-service-deployment.yml
 - api-service-service.yml
 - chat-service-deployment.yml
 - chat-service-service.yml
 - databaseSecret.yml
-# - frontend-deployment.yml
-# - frontend-service.yml
 - backend-service-deployment.yml
 - backend-service-service.yml
 - ingress.yml
 - namespace.yml
 - production-issuer.yml
 - staging-issuer.yml
+# - name: redahimmi/medical-chatbot-frontend
+#   newName: redahimmi/medical-chatbot-frontend
+#   newTag: bcb27f22241d280a59be18da277b5fabd2462339
 images:
 - name: redahimmi/medical-chatbot-api-service
   newName: redahimmi/medical-chatbot-api-service
@@ -23,9 +26,6 @@ images:
 - name: redahimmi/medical-chatbot-chat-service
   newName: redahimmi/medical-chatbot-chat-service
   newTag: bcb27f22241d280a59be18da277b5fabd2462339
-# - name: redahimmi/medical-chatbot-frontend
-#   newName: redahimmi/medical-chatbot-frontend
-#   newTag: bcb27f22241d280a59be18da277b5fabd2462339
 - name: redahimmi/medical-disease-detection-service
   newName: redahimmi/medical-disease-detection-service
-  newTag: 3e73877cad6b1e1a83c0f194e0ce7722e6c771f6
+  newTag: 25177ce344bbc07050202ac5419962bfd29229f3
