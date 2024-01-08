@@ -5,7 +5,7 @@ metadata:
   namespace: prod
 spec:
   selector:
-    app: chat
+    app: backend
   type: ClusterIP
   ports:
   - port: 80
