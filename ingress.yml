@@ -16,7 +16,8 @@ spec:
       secretName: tls-cert-staging
       
   rules:
-    - http:
+    - host: ai.redahimmi.tech
+      http:
         paths:
           - pathType: Prefix
             path: "/api/conversation"
