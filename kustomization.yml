@@ -11,7 +11,7 @@ resources:
 # - frontend-deployment.yml
 # - frontend-service.yml
 - backend-service-deployment.yml
-- backend-service.yml
+- backend-service-service.yml
 - ingress.yml
 - namespace.yml
 - production-issuer.yml
