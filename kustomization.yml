@@ -10,7 +10,7 @@ resources:
 - databaseSecret.yml
 # - frontend-deployment.yml
 # - frontend-service.yml
-- backend-deployment.yml
+- backend-service-deployment.yml
 - backend-service.yml
 - ingress.yml
 - namespace.yml
