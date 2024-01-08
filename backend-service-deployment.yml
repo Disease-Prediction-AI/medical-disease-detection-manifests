@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: redahimmi/medical-disease-detection-service
+        env:
+          - name: "SPRING.DATASOURCE.URL"
+            value: "jdbc:sqlserver://pneumoniaredahimmi.database.windows.net:1433;databaseName=pneumonia"
+          - name: "SPRING_DATASOURCE_USERNAME"
+            valueFrom:
+              secretKeyRef:
+                name: db-credentials
+                key: SPRING_DATASOURCE_USERNAME
+          - name: "SPRING_DATASOURCE_PASSWORD"
+            valueFrom:
+              secretKeyRef:
+                name: db-credentials
+                key: SPRING_DATASOURCE_PASSWORD
+        resources:
+          limits:
+            memory: "500Mi"
+            cpu: "200m"
+        ports:
+        - containerPort: 8080

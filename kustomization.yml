@@ -8,8 +8,8 @@ resources:
 - chat-service-deployment.yml
 - chat-service-service.yml
 - databaseSecret.yml
-- frontend-deployment.yml
-- frontend-service.yml
+# - frontend-deployment.yml
+# - frontend-service.yml
 - ingress.yml
 - namespace.yml
 - production-issuer.yml
@@ -21,9 +21,9 @@ images:
 - name: redahimmi/medical-chatbot-chat-service
   newName: redahimmi/medical-chatbot-chat-service
   newTag: bcb27f22241d280a59be18da277b5fabd2462339
-- name: redahimmi/medical-chatbot-frontend
-  newName: redahimmi/medical-chatbot-frontend
-  newTag: bcb27f22241d280a59be18da277b5fabd2462339
+# - name: redahimmi/medical-chatbot-frontend
+#   newName: redahimmi/medical-chatbot-frontend
+#   newTag: bcb27f22241d280a59be18da277b5fabd2462339
 - name: redahimmi/medical-disease-detection-service
   newName: redahimmi/medical-disease-detection-service
   newTag: 3e73877cad6b1e1a83c0f194e0ce7722e6c771f6

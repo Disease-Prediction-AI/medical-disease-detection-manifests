@@ -19,16 +19,16 @@ spec:
     - http:
         paths:
           - pathType: Prefix
-            path: "/"
+            path: "/api/conversation"
             backend:
               service:
-                name: frontend-service
+                name: api-service
                 port:
                   number: 80
           - pathType: Prefix
             path: "/api"
             backend:
               service:
-                name: api-service
+                name: backend-service
                 port:
                   number: 80
