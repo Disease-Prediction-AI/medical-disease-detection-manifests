@@ -6,8 +6,8 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: "external-nginx"
     cert-manager.io/issuer: "letsencrypt-staging"
-    # nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    # nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
   # ingressClassName: external-nginx
   tls:
@@ -16,7 +16,8 @@ spec:
       secretName: tls-cert-staging
       
   rules:
-    - http:
+    - host: ai.redahimmi.tech
+      http:
         paths:
           - pathType: Prefix
             path: "/api/conversation"
