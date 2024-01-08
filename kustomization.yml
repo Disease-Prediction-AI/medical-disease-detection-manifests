@@ -10,6 +10,8 @@ resources:
 - databaseSecret.yml
 # - frontend-deployment.yml
 # - frontend-service.yml
+- backend-deployment.yml
+- backend-service.yml
 - ingress.yml
 - namespace.yml
 - production-issuer.yml
